@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TenderAI — proverljivo praćenje javnih nabavki, izmena, rokova i dokaza." />
+  <title>TenderAI — Procurement Intelligence System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="TenderAI početna">TenderAI</a>
+      <nav class="nav-links" aria-label="Glavna navigacija">
+        <a href="#sistem">Sistem</a>
+        <a href="#dokazi">Dokazi</a>
+        <a href="#principi">Principi</a>
+      </nav>
+      <a class="button button-secondary" href="#pilot">Planiraj pilot</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">PROCUREMENT INTELLIGENCE · SERBIA</p>
+        <h1>Pratite tender.<br>Vidite promenu.<br><span>Otvorite dokaz.</span></h1>
+        <p class="hero-lead">TenderAI prati izvore javnih nabavki, dokumentaciju i rokove — uz proverljiv trag do originalnog dokumenta i bez tihog preskakanja grešaka.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#pilot">Planiraj pilot</a>
+          <a class="text-link" href="#sistem">Kako sistem radi →</a>
+        </div>
+        <div class="hero-principles" aria-label="Osnovni principi">
+          <span>Fail-closed</span>
+          <span>Evidence-grounded</span>
+          <span>Human decision</span>
+        </div>
+      </div>
+
+      <article class="case-panel reveal delay-1" aria-label="Primer promene tendera">
+        <div class="case-head">
+          <div>
+            <p class="mono overline">PRIMER IZ TESTNOG KORPUSA</p>
+            <h2>Stara Pazova · 404-28/26</h2>
+          </div>
+          <span class="status status-verified">IZVOR PROVEREN</span>
+        </div>
+
+        <div class="case-change">
+          <div class="case-label">Promena uslova</div>
+          <div class="amount-change">
+            <div><small>Prethodno</small><strong class="old-value">150M RSD</strong></div>
+            <div class="arrow" aria-hidden="true">→</div>
+            <div><small>Novo</small><strong>132M RSD</strong></div>
+          </div>
+          <p>Promena minimalnog poslovnog prihoda u novoj verziji dokumentacije.</p>
+        </div>
+
+        <div class="case-meta">
+          <div><span>Status</span><strong class="mono">MENJA_SPREMNOST</strong></div>
+          <div><span>Izvor</span><strong>Portal javnih nabavki</strong></div>
+          <div><span>Dokaz</span><strong>Dokument → verzija → citat</strong></div>
+          <div><span>Integritet</span><strong class="mono">SHA-256 fingerprint</strong></div>
+        </div>
+      </article>
+    </section>
+
+    <section class="source-bar">
+      <div class="container source-bar-inner">
+        <span class="mono">KANALI</span>
+        <div class="source-list">
+          <span>Portal javnih nabavki</span>
+          <span>TED</span>
+          <span>EBRD ECEPP</span>
+          <span>Planovi nabavki</span>
+          <span>Email monitoring</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="sistem" class="section container">
+      <div class="section-intro reveal">
+        <p class="section-kicker">01 / SISTEM</p>
+        <h2>Tender nije statičan oglas.</h2>
+        <p>Relevantna promena može nastati posle objave: dokumentacija se menja, rok se pomera, uslov se briše ili izvor prestane da odgovara. Sistem zato prati stanje kroz vreme, ne samo početnu objavu.</p>
+      </div>
+
+      <div class="signal-list">
+        <article class="signal-row reveal"><span class="signal-index mono">01</span><div><h3>Promena dokumentacije</h3><p>Nova verzija se poredi sa prethodnom i razlika se evidentira.</p></div><span class="signal-code mono">CHANGE_DETECTED</span></article>
+        <article class="signal-row reveal"><span class="signal-index mono">02</span><div><h3>Promena roka</h3><p>Rok se tretira kao operativni događaj, ne kao statično polje.</p></div><span class="signal-code mono">DEADLINE_ALERT</span></article>
+        <article class="signal-row reveal"><span class="signal-index mono">03</span><div><h3>Kvar izvora</h3><p>Nedostupan kanal nije “nema novosti”. Neuspešna provera ostaje vidljiva.</p></div><span class="signal-code mono">FAIL_CLOSED</span></article>
+        <article class="signal-row reveal"><span class="signal-index mono">04</span><div><h3>Nečitljiv sadržaj</h3><p>Nečitljiv ili nepotpun sadržaj se ne nagađa; prosleđuje se na ljudski pregled.</p></div><span class="signal-code mono">NA_PREGLED</span></article>
+      </div>
+    </section>
+
+    <section id="dokazi" class="section section-muted">
+      <div class="container">
+        <div class="section-intro reveal">
+          <p class="section-kicker">02 / DOKAZI</p>
+          <h2>Tvrdnja mora imati put nazad do izvora.</h2>
+          <p>TenderAI ne traži poverenje u model. Važan nalaz mora biti proverljiv kroz dokument, verziju, citat i izvor.</p>
+        </div>
+
+        <div class="evidence-layout reveal">
+          <div class="document-card">
+            <div class="document-head"><span class="mono">DOKUMENT · DEMO PRIKAZ</span><span class="status status-neutral">SOURCE COPY</span></div>
+            <div class="document-body">
+              <div class="doc-line w92"></div><div class="doc-line w72"></div><div class="doc-line w84"></div>
+              <div class="doc-highlight">Relevantni literalni citat iz izvornog dokumenta vezuje se za nalaz. Ako citat nije potvrđen u izvoru, tvrdnja ne dobija status potvrđene činjenice.</div>
+              <div class="doc-line w88"></div><div class="doc-line w66"></div>
+            </div>
+          </div>
+
+          <div class="evidence-details">
+            <p class="mono overline">EVIDENCE CHAIN</p>
+            <ol class="evidence-steps">
+              <li><span>01</span><div><strong>Nalaz</strong><small>Identifikovana promena</small></div></li>
+              <li><span>02</span><div><strong>Tender</strong><small>Postupak kojem promena pripada</small></div></li>
+              <li><span>03</span><div><strong>Dokument + verzija</strong><small>Tačan artefakt iz kog potiče nalaz</small></div></li>
+              <li><span>04</span><div><strong>Literalni citat</strong><small>Tekst koji podržava tvrdnju</small></div></li>
+              <li><span>05</span><div><strong>Izvor + integritet</strong><small>Originalni kanal i fingerprint</small></div></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="principi" class="section container">
+      <div class="section-intro reveal"><p class="section-kicker">03 / PRINCIPI</p><h2>Operativna disciplina pre automatizacije.</h2></div>
+      <div class="principles-grid">
+        <article class="principle reveal"><span class="mono">01</span><h3>Svaka tvrdnja ima dokaz.</h3><p>Uslov bez proverljivog izvora ne postaje činjenica u sistemu.</p></article>
+        <article class="principle reveal delay-1"><span class="mono">02</span><h3>Nejasno znači “na pregled”.</h3><p>Fail-closed ponašanje ima prednost nad samouverenim nagađanjem.</p></article>
+        <article class="principle reveal delay-2"><span class="mono">03</span><h3>Čovek donosi odluku.</h3><p>Sistem prati, poredi i dokumentuje. Go/No-Go odluku donosi čovek.</p></article>
+      </div>
+    </section>
+
+    <section class="section workflow-section">
+      <div class="container">
+        <div class="section-intro reveal"><p class="section-kicker">04 / OPERATIVNI TOK</p><h2>Od izvora do odluke.</h2></div>
+        <div class="workflow reveal">
+          <div><span>01</span><strong>IZVORI</strong><small>portali · planovi · email</small></div>
+          <div><span>02</span><strong>VALIDACIJA</strong><small>health · integrity</small></div>
+          <div><span>03</span><strong>GROUNDING</strong><small>citat · dokaz</small></div>
+          <div><span>04</span><strong>DETEKCIJA</strong><small>izmena · rok · kvar</small></div>
+          <div class="workflow-human"><span>05</span><strong>ČOVEK</strong><small>pregled · odluka</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container validation">
+      <div class="validation-copy reveal">
+        <p class="section-kicker">REAL-WORLD VALIDATION</p>
+        <h2>Razvijano na stvarnim tenderskim dokumentima.</h2>
+        <p>Repo sadrži testove i radne primere zasnovane na stvarnim postupcima, uključujući Stara Pazova i Gornji Milanovac. Landing namerno ne prikazuje izmišljene KPI metrike niti tvrdi da je demo panel live produkcioni sistem.</p>
+      </div>
+      <div class="validation-facts reveal delay-1">
+        <div><span class="mono">REAL</span><p>stvarni testni dokumenti</p></div>
+        <div><span class="mono">2×</span><p>ponovljivost behavior testova kao projektni princip</p></div>
+        <div><span class="mono">SHA</span><p>integritet i sledljivost artefakata</p></div>
+      </div>
+    </section>
+
+    <section id="pilot" class="section final-cta">
+      <div class="container cta-inner reveal">
+        <div><p class="section-kicker">PILOT</p><h2>Počnite sa jednim procesom i jasnim kriterijumom prihvatanja.</h2><p>Bez velikih obećanja. Prvo pokažemo da sistem pouzdano prati, detektuje i dokumentuje ono što je važno vašem timu.</p></div>
+        <a class="button button-primary" href="#top">Planiraj pilot</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="container footer-inner"><span>TenderAI</span><span>Procurement intelligence · evidence-first</span></div></footer>
+  <script src="app.js"></script>
+</body>
+</html>
